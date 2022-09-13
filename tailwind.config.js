@@ -5,6 +5,11 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
+        screens: {
+            'mobile': '375px',
+            'tablet': '768px',
+            'desktop': '1024px',
+        },
         extend: {},
     },
     plugins: [require("daisyui")],
