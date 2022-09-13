@@ -24,7 +24,7 @@ export default function Hero() {
                         <label for="soon-modal" class="btn modal-button mb-2">
                             🌟 Start Your Journey
                         </label>
-                        <div className='flex justify-center items-center'>
+                        <div className='flex mobile:flex-col tablet:flex-row justify-center items-center'>
                             <a href="https://forums.whitewaterservers.com/">
                                 <button className="btn btn-primary m-2">
                                     <p>📢</p>
