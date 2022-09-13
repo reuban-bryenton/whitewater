@@ -1,9 +1,15 @@
 import '../styles/globals.css'
-import Head from 'next/head'
+
+//ANIMATION FRAMER MOTION
+import {motion} from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: .5 }}
+        >
             <Component {...pageProps} />
 
             <input type="checkbox" id="soon-modal" class="modal-toggle" />
@@ -16,7 +22,7 @@ function MyApp({ Component, pageProps }) {
                     </div>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 
