@@ -15,7 +15,7 @@ export default function Home() {
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Smart Watches!</h2>
-                        <p>Press the hotkey 'G' to enable your watch and keep track of all your statistics and even listen to some music.</p>
+                        <p>Press the hotkey G to enable your watch and keep track of all your statistics and even listen to some music.</p>
                         <div class="card-actions">
                         <button class="btn btn-primary">Buy Now</button>
                         </div>
