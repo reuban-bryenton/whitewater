@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="hero min-h-screen bg-[url(https://media.discordapp.net/attachments/1013415595271794738/1013963872845189130/LoadingScreenV2.1-skojen.png)]">
             <div className="hero-overlay bg-opacity-60"></div>
             <motion.div
-                initial={{ y: "-100vw" }}
+                initial={{ y: "-100vh" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.5 }}
             >
