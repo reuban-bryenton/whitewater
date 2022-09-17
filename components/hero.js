@@ -27,19 +27,25 @@ export default function Hero() {
                         <div className='flex mobile:flex-col tablet:flex-row justify-center items-center'>
                             <a href="https://forums.whitewaterservers.com/">
                                 <button className="btn btn-primary m-2">
-                                    <p>📢</p>
+                                    <p>
+                                        📢
+                                    </p>
                                     Forums
                                 </button>
                             </a>
                             <a href="https://docs.whitewaterservers.com/">
                                 <button className="btn btn-primary m-2">
-                                    <p>📋</p>
+                                    <p>
+                                        📋
+                                    </p>
                                     Documentation
                                 </button>
                             </a>
                             <a href="https://discord.gg/VPykm3Q">
                                 <button className="btn btn-primary m-2">
-                                    <p>💬</p>
+                                    <p>
+                                        💬
+                                    </p>
                                     Discord
                                 </button>
                             </a>
