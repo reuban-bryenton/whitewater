@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-            <title>Whitewater Servers | Garry's Mod CityRP Community</title>
+            <title>Whitewater Servers | Gmod CityRP Community</title>
             <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
             </Head>
             <motion.div
