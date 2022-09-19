@@ -1,9 +1,6 @@
 // ANIMATION FRAMER MOTION
 import {motion} from 'framer-motion';
 
-// Theme Switcher
-import ThemeSwitcher from '../components/ThemeSwitcher'
-
 export default function WWGallery() {
     return(
         <motion.div

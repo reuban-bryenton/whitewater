@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: .5 }}
             >
-                <Component {...pageProps} />
+                <div className='overflow-hidden'>
+                    <Component {...pageProps} />
+                </div>
 
                 <input type="checkbox" id="soon-modal" class="modal-toggle" />
                 <div class="modal">

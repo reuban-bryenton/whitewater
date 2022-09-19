@@ -3,6 +3,7 @@ import WWGallery from '../components/ww-gallery'
 
 // ANIMATION FRAMER MOTION
 import {motion, useScroll} from 'framer-motion';
+import KeysMap from '../components/keysMap';
 
 export default function Home() {
     const { scrollYProgress } = useScroll();
@@ -11,6 +12,7 @@ export default function Home() {
             <motion.div style={{ scaleX: scrollYProgress }} />
             <Hero />
             <WWGallery />
+            <KeysMap />
         </>
     )
 }
