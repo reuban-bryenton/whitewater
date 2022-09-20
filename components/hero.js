@@ -22,7 +22,7 @@ export default function Hero() {
     const [minutes, setMinutes] = useState(minutesDefalt);
     var count = 0
     const updateCountdown = () => {
-        count = count + 10
+        count = count + 1
         if (count == 60) {
             count = 0
             if (minutes == 0) {
@@ -38,15 +38,14 @@ export default function Hero() {
             } else {
                 setMinutes(minutes-1)
             }
-            document.getElementById('counterdays').style.setProperty('--value', days)
-            document.getElementById('counterhours').style.setProperty('--value', hours)
-            document.getElementById('countermin').style.setProperty('--value', minutes)
         }
+        document.getElementById('counterdays').style.setProperty('--value', days)
+        document.getElementById('counterhours').style.setProperty('--value', hours)
+        document.getElementById('countermin').style.setProperty('--value', minutes)
     }
     setInterval(() => {
         updateCountdown()
-    }, 10000)
-
+    }, 1000)
     return(
         <div className="hero min-h-screen bg-[url(https://media.discordapp.net/attachments/1013415595271794738/1013963872845189130/LoadingScreenV2.1-skojen.png)]">
             <div className="hero-overlay bg-opacity-60"></div>
