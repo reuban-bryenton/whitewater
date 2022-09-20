@@ -3,8 +3,50 @@ import {motion} from 'framer-motion';
 
 // Theme Switcher
 import ThemeSwitcher from '../components/ThemeSwitcher'
+import { useState } from 'react';
 
 export default function Hero() {
+    let date_1 = new Date('09/30/2022');
+    date_1.setHours(19)
+    date_1.setMinutes(0)
+    let date_2 = new Date();
+    // get total seconds between the times
+    var delta = Math.abs(date_1 - date_2) / 1000;
+    let daysDefalt = Math.floor(delta / 86400)
+    delta -= daysDefalt * 86400;
+    let hoursDefalt = Math.floor(delta / 3600) % 24
+    delta -= hoursDefalt * 3600;
+    let minutesDefalt = Math.floor(delta / 60) % 60
+    const [days, setDays] = useState(daysDefalt);
+    const [hours, setHours] = useState(hoursDefalt);
+    const [minutes, setMinutes] = useState(minutesDefalt);
+    var count = 0
+    const updateCountdown = () => {
+        count = count + 10
+        if (count == 60) {
+            count = 0
+            if (minutes == 0) {
+                if (hours == 0) {
+                    if (days == 0) {
+                        document.getElementById('countercontainer').style.display = 'none'
+                    } else {
+                        setDays(days-1)
+                    }
+                } else {
+                    setHours(hours-1)
+                }
+            } else {
+                setMinutes(minutes-1)
+            }
+            document.getElementById('counterdays').style.setProperty('--value', days)
+            document.getElementById('counterhours').style.setProperty('--value', hours)
+            document.getElementById('countermin').style.setProperty('--value', minutes)
+        }
+    }
+    setInterval(() => {
+        updateCountdown()
+    }, 10000)
+
     return(
         <div className="hero min-h-screen bg-[url(https://media.discordapp.net/attachments/1013415595271794738/1013963872845189130/LoadingScreenV2.1-skojen.png)]">
             <div className="hero-overlay bg-opacity-60"></div>
@@ -51,6 +93,26 @@ export default function Hero() {
                             </a>
                         </div>
                         <ThemeSwitcher />
+                        <div class="flex justify-center items-center" id="countercontainer">
+                            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content mx-4">
+                                <span class="countdown font-mono text-5xl text-center w-full flex justify-center items-center m">
+                                <span id="counterdays"></span>
+                                </span>
+                                days
+                            </div> 
+                            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content mx-4">
+                                <span class="countdown font-mono text-5xl text-center w-full flex justify-center items-center">
+                                <span id="counterhours"></span>
+                                </span>
+                                hours
+                            </div> 
+                            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content mx-4">
+                                <span class="countdown font-mono text-5xl text-center w-full flex justify-center items-center">
+                                <span id="countermin"></span>
+                                </span>
+                                min
+                            </div>
+                        </div>
                     </div>
                 </div>
             </motion.div>
