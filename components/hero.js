@@ -7,45 +7,55 @@ import { useState } from 'react';
 
 export default function Hero() {
     let date_1 = new Date('09/30/2022');
-    date_1.setHours(19)
-    date_1.setMinutes(0)
+    date_1.setHours(19);
+    date_1.setMinutes(0);
     let date_2 = new Date();
     // get total seconds between the times
     var delta = Math.abs(date_1 - date_2) / 1000;
-    let daysDefalt = Math.floor(delta / 86400)
+    let daysDefalt = Math.floor(delta / 86400);
     delta -= daysDefalt * 86400;
-    let hoursDefalt = Math.floor(delta / 3600) % 24
+    let hoursDefalt = Math.floor(delta / 3600) % 24;
     delta -= hoursDefalt * 3600;
-    let minutesDefalt = Math.floor(delta / 60) % 60
+    let minutesDefalt = Math.floor(delta / 60) % 60;
+    delta -= minutesDefalt * 60;
+    let secondsDefalt = Math.round(delta % 60);
     const [days, setDays] = useState(daysDefalt);
     const [hours, setHours] = useState(hoursDefalt);
     const [minutes, setMinutes] = useState(minutesDefalt);
-    var count = 0
+    const [seconds, setSeconds] = useState(secondsDefalt);
+    var first = true
     const updateCountdown = () => {
-        count = count + 1
-        if (count == 60) {
-            count = 0
+        if (first) {
+            first = false
+            document.getElementById('counterdays').style.setProperty('--value', days)
+            document.getElementById('counterhours').style.setProperty('--value', hours)
+            document.getElementById('countermin').style.setProperty('--value', minutes)
+        }
+        if (seconds <= 4) {
             if (minutes == 0) {
                 if (hours == 0) {
                     if (days == 0) {
                         document.getElementById('countercontainer').style.display = 'none'
                     } else {
                         setDays(days-1)
+                        document.getElementById('counterdays').style.setProperty('--value', days)
                     }
                 } else {
                     setHours(hours-1)
+                    document.getElementById('counterhours').style.setProperty('--value', hours)
                 }
             } else {
                 setMinutes(minutes-1)
+                document.getElementById('countermin').style.setProperty('--value', minutes)
             }
+        } else {
+            setSeconds(seconds-5)
+            document.getElementById('countersecs').style.setProperty('--value', seconds)
         }
-        document.getElementById('counterdays').style.setProperty('--value', days)
-        document.getElementById('counterhours').style.setProperty('--value', hours)
-        document.getElementById('countermin').style.setProperty('--value', minutes)
     }
     setInterval(() => {
         updateCountdown()
-    }, 1000)
+    }, 5000)
     return(
         <div className="hero min-h-screen bg-[url(https://media.discordapp.net/attachments/1013415595271794738/1013963872845189130/LoadingScreenV2.1-skojen.png)]">
             <div className="hero-overlay bg-opacity-60"></div>
@@ -110,6 +120,12 @@ export default function Hero() {
                                 <span id="countermin"></span>
                                 </span>
                                 min
+                            </div>
+                            <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content mx-4">
+                                <span class="countdown font-mono text-5xl text-center w-full flex justify-center items-center">
+                                <span id="countersecs"></span>
+                                </span>
+                                secs
                             </div>
                         </div>
                     </div>
