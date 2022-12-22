@@ -18,13 +18,13 @@ export default function KeysMap() {
                 <p class="py-4">{`${desc}`}</p>
             </label>
             </label>
-            
+
             <motion.div
                     initial={{ x: "200vw" }}
                     animate={{ x: 0 }}
                     transition={{ duration: 1.5 }}
             >
-                <div className='h-screen flex flex-col justify-center items-center bg-base-200'>
+                <div className='h-screen tablet:flex desktop:flex flex-col justify-center items-center bg-base-200 hidden'>
                     <p id="ww-controls" className='text-primary text-4xl font-bold mb-4'>
                         Server Game Controls
                     </p>
@@ -114,7 +114,7 @@ export default function KeysMap() {
                             >
                                 Backspace
                             </label>
-                        </div> 
+                        </div>
                         <div class="flex justify-center gap-1 my-1 w-full">
                             <label
                                 onClick={() => {setKey('KEY_TAB');setDesc('This key has no function.');}}
@@ -200,7 +200,7 @@ export default function KeysMap() {
                             >
                                 \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </label>
-                        </div> 
+                        </div>
                         <div class="flex justify-center gap-1 my-1 w-full">
                             <label
                                 onClick={() => {setKey('KEY_CAPSLOCK');setDesc('This key has no function.');}}

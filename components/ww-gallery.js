@@ -8,12 +8,12 @@ export default function WWGallery() {
                 animate={{ x: 0 }}
                 transition={{ duration: 1.5 }}
         >
-            
-            <div className='h-screen flex flex-col justify-center items-center bg-base-100'>
+
+            <div className='min-h-screen flex flex-col justify-center items-center bg-base-100 py-8'>
                 <h2 id="ww-gallery" className='text-primary text-4xl font-bold mb-4'>
                     Whitewater Gallery
                 </h2>
-                <div className='grid grid-cols-1 tablet:grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 tablet:grid-cols-2 gap-4'>
                 <div class="card w-96 bg-base-content text-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="https://media.discordapp.net/attachments/745724500317962260/1020076911206088724/gSmartWatch.png" alt="Shoes" class="rounded-xl" />
