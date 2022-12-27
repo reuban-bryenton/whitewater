@@ -22,7 +22,7 @@ export default function Hero() {
                         <p className="mb-6">
                             A realistic RP server with big goals and an amazing community.
                         </p>
-                        <label for="soon-modal" class="btn modal-button mb-2">
+                        <label for="soon-modal" class="btn btn-wide modal-button mb-2">
                             🌟 Start Your Journey
                         </label>
                         <div className='flex mobile:flex-col tablet:flex-row justify-center items-center'>
