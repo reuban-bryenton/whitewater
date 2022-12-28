@@ -8,8 +8,9 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-            <title>Whitewater Servers | Gmod CityRP Community</title>
-            <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
+                <title>Whitewater Servers | Gmod CityRP Community</title>
+                <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
+                <meta name="description" content="WhitewaterRP is a new Garry's Mod DarkRP. We are currently looking for some more members. The server is now open and ready to be enjoyed!"></meta>
             </Head>
             <motion.div
                 initial={{ opacity: 0 }}
